@@ -1,0 +1,63 @@
+package Quick_union_weighted;
+
+import java.util.Arrays;
+
+import Utils.StdOut;
+
+public class UF {
+	private int[] id;
+	private int[] sizes;
+	
+	public UF(int N) {
+		id = new int[N];
+		sizes = new int[N];
+		
+		for (int i = 0; i < id.length; i++) {
+			id[i] = i;
+			sizes = 1;
+		}
+	}
+	
+	public void union(int p, int q) {
+		//get the root of the component containing the first item and
+		//make that a child of the root of the component containing 
+		//the second item
+		long start = System.nanoTime(); 
+		
+		int root_p = p;
+		while(id[root_p] != root_p) {
+			root_p = id[root_p];
+		}
+		
+		int root_q = q;
+		while(id[root_q] != root_q) {
+			root_q = id[root_q];
+		}
+		
+		id[root_p] = root_q;
+		
+		long elapsedTime = System.nanoTime() - start;
+		StdOut.println("union execution time: " + elapsedTime);
+	}
+	
+	public boolean connected(int p, int q) {
+		int root_p = p;
+		while(id[root_p] != root_p) {
+			root_p = id[root_p];
+		}
+		
+		int root_q = q;
+		while(id[root_q] != root_q) {
+			root_q = id[root_q];
+		}
+		
+		return (root_p == root_q);
+	}
+
+	@Override
+	public String toString() {
+		return "UF [id=" + Arrays.toString(id) + "]";
+	}
+	
+	
+}

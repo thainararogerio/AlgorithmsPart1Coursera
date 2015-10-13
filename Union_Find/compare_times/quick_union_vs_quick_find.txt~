@@ -10,6 +10,8 @@ UF [id=[1, 2, 3, 3, 4]]
 union execution time: 658
 UF [id=[1, 2, 3, 4, 4]]
 
+
+
 Quick-find
 5
 0 1 1 2 2 3 3 4 4 0
@@ -21,16 +23,4 @@ union execution time: 2534
 UF [ids=[3, 3, 3, 3, 4]]
 union execution time: 3603
 UF [ids=[4, 4, 4, 4, 4]]
-
-Quick-union-weighted
-5
-0 1 1 2 2 3 3 4 4 0
-union execution time: 1920
-UF [id=[0, 0, 2, 3, 4]]
-union execution time: 2023
-UF [id=[0, 0, 0, 3, 4]]
-union execution time: 1224
-UF [id=[0, 0, 0, 0, 4]]
-union execution time: 1154
-UF [id=[0, 0, 0, 0, 0]]
 
