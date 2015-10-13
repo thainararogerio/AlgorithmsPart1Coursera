@@ -1,17 +1,12 @@
 package Quick_find;
-import java.sql.Time;
 import java.util.Arrays;
-import java.util.Timer;
-
 import Utils.StdOut;
 
 public class UF {
 	private int[] id;
-	private int increment_id;
 	
 	public UF(int N) {
 		id = new int[N];
-		increment_id = 1;
 		
 		for (int i = 0; i < id.length; i++) {
 			id[i] = i;
@@ -40,7 +35,7 @@ public class UF {
 
 	@Override
 	public String toString() {
-		return "UF [ids=" + Arrays.toString(id) + ", increment_id=" + increment_id + "]";
+		return "UF [ids=" + Arrays.toString(id) + "]";
 	}
 	
 	

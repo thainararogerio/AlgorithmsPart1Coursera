@@ -4,6 +4,7 @@ import Utils.StdOut;
 
 public class Main {
 	public static void main(String[] args) {
+		StdOut.println("Quick-find");
 		int N = StdIn.readInt();
 		UF uf = new UF(N);
 		

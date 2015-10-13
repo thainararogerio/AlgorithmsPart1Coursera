@@ -1,0 +1,30 @@
+Quick-union
+5
+0 1 2 3 4
+
+0 1 1 2 2 3 3 4 4 0
+union execution time: 1351
+UF [id=[1, 1, 2, 3, 4]]
+union execution time: 890
+UF [id=[1, 2, 2, 3, 4]]
+union execution time: 661
+UF [id=[1, 2, 3, 3, 4]]
+union execution time: 658
+UF [id=[1, 2, 3, 4, 4]]
+
+
+
+Quick-find
+5
+0 1 2 3 4
+
+0 1 1 2 2 3 3 4 4 0
+union execution time: 4651
+UF [ids=[1, 1, 2, 3, 4]]
+union execution time: 2753
+UF [ids=[2, 2, 2, 3, 4]]
+union execution time: 2534
+UF [ids=[3, 3, 3, 3, 4]]
+union execution time: 3603
+UF [ids=[4, 4, 4, 4, 4]]
+
