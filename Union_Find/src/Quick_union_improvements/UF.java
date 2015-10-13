@@ -1,4 +1,4 @@
-package Quick_union_weighted;
+package Quick_union_improvements;
 
 import java.util.Arrays;
 
@@ -18,18 +18,25 @@ public class UF {
 		}
 	}
 	
+	private int root(int i) {
+		while(id[i] != i) {
+			//Path compression:
+			id[i] = id[id[i]]; //make the actual receive it's parent's parent.
+			//to make the tree flat.
+			
+			i = id[i];
+		}
+		return i;
+	}
+	
 	public void union(int p, int q) {
+		//get the root of the component containing the first item and
+		//make that a child of the root of the component containing 
+		//the second item
 		long start = System.nanoTime(); 
 		
-		int root_p = p;
-		while(id[root_p] != root_p) {
-			root_p = id[root_p];
-		}
-		
-		int root_q = q;
-		while(id[root_q] != root_q) {
-			root_q = id[root_q];
-		}
+		int root_p = root(p);
+		int root_q = root(q);
 		
 		if(root_p == root_q) {
 			return;//they are already connected
@@ -48,17 +55,7 @@ public class UF {
 	}
 	
 	public boolean connected(int p, int q) {
-		int root_p = p;
-		while(id[root_p] != root_p) {
-			root_p = id[root_p];
-		}
-		
-		int root_q = q;
-		while(id[root_q] != root_q) {
-			root_q = id[root_q];
-		}
-		
-		return (root_p == root_q);
+		return (root(p) == root(q));
 	}
 
 	@Override
